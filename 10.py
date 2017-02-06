@@ -25,4 +25,10 @@ def primes_to(max):
 
     return primes
 
-print (primes_to(2000000))
+sum = 0
+for num in primes_to(2000000)[2::]:
+    if num > 1:
+        sum += num
+
+print(primes_to(200)[2::])
+print (sum)
