@@ -24,27 +24,6 @@ def get_triangle_number(nth):
         sum += i
     return sum
 
-def primes_to(max):
-    numbers = [None]*(max+1)
-    primes = []
-    index = 2
-
-    while index < max+1:
-
-        if numbers[index] == None:
-
-            multiplied_index = index*2
-            while multiplied_index < max+1:
-                numbers[multiplied_index] = 1
-                multiplied_index += index
-        index += 1
-
-    for index, num in enumerate(numbers):
-        if num != 1:
-            primes.append(index)
-
-    return primes[2::]
-
 i = 2
 while True:
     divisors = []
@@ -55,8 +34,8 @@ while True:
     dividend = tri_num/divisor
 
     while dividend > divisor:
-        #print dividend, divisor, divisors
-        dividend = tri_num/divisor
+
+        dividend = tri_num/float(divisor)
 
         if dividend == floor(dividend):
             divisors.append(divisor)
@@ -65,10 +44,9 @@ while True:
 
 
     i+=1
-    print i, len(divisors), divisors
-
+    print i
     if len(divisors) > 500:
-        print tri_num
+        print i, tri_num
         break
 
 
